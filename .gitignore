@@ -1,0 +1,15 @@
+/packages/
+
+bin/
+
+/.vs/
+
+/Sudoku.sln
+
+obj/
+
+Properties/
+
+/Sudoku/Sudoku.csproj
+
+/Sudoku/packages.config
