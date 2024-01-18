@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sudoku.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,36 +16,27 @@ using System.Windows.Shapes;
 
 namespace Sudoku
 {
-    /// <summary>
-    /// Логика взаимодействия для Menu.xaml
-    /// </summary>
-    public partial class Menu : Page
+    public partial class MenuPage : Page
     {
-        public Menu()
+        public MenuPage()
         {
             InitializeComponent();
         }
 
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                NavigationService.Navigate(new Game());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            NavigationService.Navigate(new ChooseLevelPage());
+
         }
 
         private void ScoreButton_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new ScorePage());
         }
 
-        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        private void RulesButton_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            NavigationService.Navigate(new RulesPage());
         }
     }
 }

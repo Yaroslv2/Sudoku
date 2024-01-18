@@ -4,9 +4,61 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sudoku"
+        xmlns:view="clr-namespace:Sudoku.View"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
-        Title="Sudoku" Height="450" Width="800">
-    <Grid>
-        <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden"/>
-    </Grid>
+        Height="600" 
+        Width="1000"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True">
+
+    <Border CornerRadius="20"
+            Background="Black">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <Grid x:Name="Header"              
+                  Background="Transparent"
+                  IsHitTestVisible="True"
+                  PreviewMouseLeftButtonDown="Header_PreviewMouseLeftButtonDown">
+                <!--WINDOW TITLE-->
+                <TextBlock Text="すどく" 
+                    Foreground="White"
+                    Margin="20, 0, 0, 0"       
+                    VerticalAlignment="Center"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    FontSize="18"/>
+            </Grid>
+            <!--EXIT BUTTON-->
+            <Button Content="X"
+                    Foreground="White"
+                    Background="Transparent"
+                    FontSize="14"
+                    Width="30"
+                    Height="30"
+                    Margin="0,0,15,0"
+                    HorizontalAlignment="Right"
+                    Grid.Column="1"
+                    BorderThickness="0"
+                    Click="ExitButton_Click"/>
+            <Border CornerRadius="0,20,20,0"
+                    Grid.Row="1">
+                <Border.Background>
+                    <VisualBrush>
+                        <VisualBrush.Visual>
+                            <Image gif:ImageBehavior.AnimatedSource="Assets/Images/BackgroundImage.gif"
+                                   gif:ImageBehavior.AutoStart="True"
+                                   Opacity="0.5"/>
+                        </VisualBrush.Visual>
+                    </VisualBrush>
+                </Border.Background>
+            </Border>
+            <Frame Grid.Row="1" x:Name="mainFrame" NavigationUIVisibility="Hidden"/>
+        </Grid>
+    </Border>
 </Window>

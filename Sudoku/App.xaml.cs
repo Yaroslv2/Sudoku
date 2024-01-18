@@ -13,5 +13,8 @@ namespace Sudoku
     /// </summary>
     public partial class App : Application
     {
+        //protected override void OnStartup(StartupEventArgs startupEventArgs)
+        //{
+        //}
     }
 }

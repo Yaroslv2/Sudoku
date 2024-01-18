@@ -16,23 +16,18 @@ using System.Windows.Shapes;
 namespace Sudoku
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для RulesPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class RulesPage : Page
     {
-        public MainWindow()
+        public RulesPage()
         {
             InitializeComponent();
-            this.mainFrame.Content = new MenuPage();
         }
 
-        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        private void GoBackButton_Click(object sender, RoutedEventArgs e)
         {
-            App.Current.Shutdown();
-        }
-        private void Header_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            this.DragMove();
+            NavigationService.GoBack();
         }
     }
 }

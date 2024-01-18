@@ -1,0 +1,57 @@
+﻿<Page x:Class="Sudoku.ChooseLevelPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Sudoku"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ChooseLevelPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1"
+                    VerticalAlignment="Center">
+            <TextBlock Text="Выберите уровень сложности"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       FontSize="25"
+                       FontWeight="Bold"
+                       Margin="0, 0, 0, 30"/>
+            <Button x:Name="easyLevelButton"
+                    Content="Легкий"
+                    Style="{StaticResource MenuButtonTheme}"
+                    Height="50"
+                    Foreground="White"
+                    Click="easyLevelButton_Click"
+                    Margin="0,0,0,15"/>
+            <Button x:Name="mediumLevelButton"
+                    Content="Средний"
+                    Style="{StaticResource MenuButtonTheme}"
+                    Height="50"
+                    Foreground="White"
+                    Click="mediumLevelButton_Click"
+                    Margin="0,0,0,15"/>
+            <Button x:Name="hardLevelButton"
+                    Content="Сложный"
+                    Style="{StaticResource MenuButtonTheme}"
+                    Height="50"
+                    Foreground="White"
+                    Click="hardLevelButton_Click"
+                    Margin="0,0,0,30"/>
+            <Button x:Name="goBackButton"
+                    Content="Назад"
+                    Style="{StaticResource MenuButtonTheme}"
+                    Height="50"
+                    Foreground="White"
+                    Click="goBackButton_Click"/>
+            
+
+
+        </StackPanel>
+    </Grid>
+</Page>

@@ -4,6 +4,16 @@
              xmlns:local="clr-namespace:Sudoku"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="\Theme\MenuButtonTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <!--<DataTemplate DataType="{x:Type viewModel:MenuViewModel}">
+                <view:MenuView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:GameViewModel}">
+                <view:GameView/>
+            </DataTemplate>-->
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

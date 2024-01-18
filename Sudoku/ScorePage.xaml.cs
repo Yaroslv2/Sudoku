@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Sudoku.Models;
+using Sudoku.Utilites;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,23 +18,22 @@ using System.Windows.Shapes;
 namespace Sudoku
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для ScorePage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ScorePage : Page
     {
-        public MainWindow()
+        private FileService fileService = new FileService();
+        public List<User> Users;
+        public ScorePage()
         {
+            Users = fileService.LoadData();
             InitializeComponent();
-            this.mainFrame.Content = new MenuPage();
+            usersListView.ItemsSource = Users;
         }
 
-        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        private void goBackButton_Click(object sender, RoutedEventArgs e)
         {
-            App.Current.Shutdown();
-        }
-        private void Header_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            this.DragMove();
+            NavigationService.GoBack();
         }
     }
 }

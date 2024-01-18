@@ -15,19 +15,27 @@ using System.Windows.Shapes;
 
 namespace Sudoku
 {
-    /// <summary>
-    /// Логика взаимодействия для Game.xaml
-    /// </summary>
-    public partial class Game : Page
+    public partial class PausePage : Page
     {
-        public Game()
+        private GamePage _game;
+        public PausePage(GamePage game)
         {
             InitializeComponent();
+            _game = game;
+            timeTextBlock.Text = $"Время: {_game.Minutes}:{_game.Seconds:d2}";
         }
 
-        private void GoBackButton_Click(object sender, RoutedEventArgs e)
+        private void countinueButton_Click(object sender, RoutedEventArgs e)
         {
+            _game.timer.Start();
             NavigationService.GoBack();
         }
+
+        private void goToMenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new MenuPage());
+        }
     }
+
+
 }

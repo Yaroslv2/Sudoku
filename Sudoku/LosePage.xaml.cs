@@ -15,24 +15,21 @@ using System.Windows.Shapes;
 
 namespace Sudoku
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public partial class LosePage : Page
     {
-        public MainWindow()
+        public LosePage()
         {
             InitializeComponent();
-            this.mainFrame.Content = new MenuPage();
         }
 
-        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        private void playAgainButton_Click(object sender, RoutedEventArgs e)
         {
-            App.Current.Shutdown();
+            NavigationService.Navigate(new ChooseLevelPage());
         }
-        private void Header_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+
+        private void GoToMenuButton_Click(object sender, RoutedEventArgs e)
         {
-            this.DragMove();
+            NavigationService.Navigate(new MenuPage());
         }
     }
 }

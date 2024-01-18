@@ -1,0 +1,51 @@
+﻿<Page x:Class="Sudoku.RulesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Sudoku"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RulesPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="2*">
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" 
+                   Grid.Column="0"
+                   Text="Правила"
+                   FontSize="50"
+                   FontWeight="Bold"
+                   Foreground="White"
+                   VerticalAlignment="Center"
+                   Margin="30, 0, 0, 0"/>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="0"
+                   FontSize="14"
+                   Foreground="White"
+                   TextWrapping="Wrap"
+                   Margin="30, 10, 30, 10">
+            Судоку играется на игровом поле, состоящем из 9 на 9 клеток, всего 81 клетка. Внутри игрового поля находятся 9 "квадратов" (состоящих из 3 x 3 клеток). Каждая горизонтальная строка, вертикальный столбец и квадрат (9 клеток каждый) должны заполняться цифрами 1-9, не повторяя никаких чисел в строке, столбце или квадрате. Это звучит сложно? Каждое игровое поле Судоку имеет несколько клеток, которые уже заполнены. Чем больше клеточек изначально заполнено, тем легче игра. Чем меньше клеток изначально заполнено, тем труднее игра.
+        </TextBlock>
+        <Button Grid.Row="2"
+                Grid.Column="0"
+                Content="Назад"
+                Foreground="White"
+                FontWeight="Bold"
+                Width="140"
+                Height="40"
+                Style="{StaticResource MenuButtonTheme}"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+                Margin="30, 0, 0, 0"
+                Click="GoBackButton_Click"/>
+    </Grid>
+</Page>
